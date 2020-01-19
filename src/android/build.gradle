@@ -17,9 +17,9 @@ android {
         }
 
         debug {
-            manifestPlaceholders = [crashlyticsEnabled: false]
+            manifestPlaceholders = [crashlyticsEnabled: true]
             // do not upload debug versions to crashlytics
-            ext.enableCrashlytics = false
+            //ext.enableCrashlytics = false
         }
     }
 }
