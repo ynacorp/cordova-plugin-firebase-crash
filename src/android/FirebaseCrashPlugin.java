@@ -23,8 +23,7 @@ public class FirebaseCrashPlugin extends ReflectiveCordovaPlugin {
 
     @CordovaMethod(ExecutionThread.WORKER)
     private void crash() {
-        System.out.println("Called crash method");
-        Crashlytics.sharedInstance().crash();
+        Crashlytics.getInstance().crash();
     }
 
     @CordovaMethod(ExecutionThread.WORKER)
