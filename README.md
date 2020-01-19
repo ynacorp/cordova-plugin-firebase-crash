@@ -44,6 +44,12 @@ Log non-fatal exceptions in addition to automatically reported app crashes. Comp
 cordova.plugins.firebase.crashlytics.logError("my non-fatal exception message");
 ```
 
+### crash()
+Force a crash
+```js
+cordova.plugins.firebase.crashlytics.crash();
+```
+
 ### setUserId(_userId_)
 Sets the user identifier property for crashlytics reporting. Compare [Firebase documentation](https://firebase.google.com/docs/crashlytics/customize-crash-reports?authuser=0#set_user_identifiers).
 ```js
