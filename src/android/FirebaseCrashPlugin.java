@@ -4,14 +4,22 @@ import by.chemerisuk.cordova.support.CordovaMethod;
 import by.chemerisuk.cordova.support.ReflectiveCordovaPlugin;
 
 import com.crashlytics.android.Crashlytics;
-
+import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.CallbackContext;
+import org.apache.cordova.CordovaWebView;
 import org.json.JSONArray;
 import org.json.JSONException;
 
+import io.fabric.sdk.android.Fabric;
 
 public class FirebaseCrashPlugin extends ReflectiveCordovaPlugin {
     private final String TAG = "FirebaseCrashPlugin";
+
+    public void initialize(CordovaInterface cordova, CordovaWebView webView) {
+        super.initialize(cordova, webView);
+
+        Fabric.with(cordova.getActivity(), new Crashlytics());
+    }
 
     @CordovaMethod(ExecutionThread.WORKER)
     private void log(String message, CallbackContext callbackContext) {
